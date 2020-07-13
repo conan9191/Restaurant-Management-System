@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bishe.mapper.SeatOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.bishe.pojo.SeatOrder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="ordertime" property="ordertime" jdbcType="TIMESTAMP" />
+    <result column="arrivetime" property="arrivetime" jdbcType="TIMESTAMP" />
+    <result column="leavetime" property="leavetime" jdbcType="TIMESTAMP" />
+    <result column="duration" property="duration" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="cash" property="cash" jdbcType="INTEGER" />
+    <result column="confirm" property="confirm" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, ordertime, arrivetime, leavetime, duration, num, cash, confirm, uid, state
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bishe.pojo.SeatOrderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from seat_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by id desc
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from seat_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from seat_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bishe.pojo.SeatOrderExample" >
+    delete from seat_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.bishe.pojo.SeatOrder" >
+    insert into seat_order (id, name, ordertime, 
+      arrivetime, leavetime, duration, 
+      num, cash, confirm, 
+      uid, state)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{ordertime,jdbcType=TIMESTAMP}, 
+      #{arrivetime,jdbcType=TIMESTAMP}, #{leavetime,jdbcType=TIMESTAMP}, #{duration,jdbcType=INTEGER}, 
+      #{num,jdbcType=INTEGER}, #{cash,jdbcType=INTEGER}, #{confirm,jdbcType=VARCHAR}, 
+      #{uid,jdbcType=INTEGER}, #{state,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bishe.pojo.SeatOrder" >
+    insert into seat_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="ordertime != null" >
+        ordertime,
+      </if>
+      <if test="arrivetime != null" >
+        arrivetime,
+      </if>
+      <if test="leavetime != null" >
+        leavetime,
+      </if>
+      <if test="duration != null" >
+        duration,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="cash != null" >
+        cash,
+      </if>
+      <if test="confirm != null" >
+        confirm,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="ordertime != null" >
+        #{ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="arrivetime != null" >
+        #{arrivetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leavetime != null" >
+        #{leavetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="cash != null" >
+        #{cash,jdbcType=INTEGER},
+      </if>
+      <if test="confirm != null" >
+        #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bishe.pojo.SeatOrderExample" resultType="java.lang.Integer" >
+    select count(*) from seat_order
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update seat_order
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ordertime != null" >
+        ordertime = #{record.ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.arrivetime != null" >
+        arrivetime = #{record.arrivetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.leavetime != null" >
+        leavetime = #{record.leavetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.duration != null" >
+        duration = #{record.duration,jdbcType=INTEGER},
+      </if>
+      <if test="record.num != null" >
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.cash != null" >
+        cash = #{record.cash,jdbcType=INTEGER},
+      </if>
+      <if test="record.confirm != null" >
+        confirm = #{record.confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uid != null" >
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.state != null" >
+        state = #{record.state,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update seat_order
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      ordertime = #{record.ordertime,jdbcType=TIMESTAMP},
+      arrivetime = #{record.arrivetime,jdbcType=TIMESTAMP},
+      leavetime = #{record.leavetime,jdbcType=TIMESTAMP},
+      duration = #{record.duration,jdbcType=INTEGER},
+      num = #{record.num,jdbcType=INTEGER},
+      cash = #{record.cash,jdbcType=INTEGER},
+      confirm = #{record.confirm,jdbcType=VARCHAR},
+      uid = #{record.uid,jdbcType=INTEGER},
+      state = #{record.state,jdbcType=BIT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bishe.pojo.SeatOrder" >
+    update seat_order
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="ordertime != null" >
+        ordertime = #{ordertime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="arrivetime != null" >
+        arrivetime = #{arrivetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leavetime != null" >
+        leavetime = #{leavetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="duration != null" >
+        duration = #{duration,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="cash != null" >
+        cash = #{cash,jdbcType=INTEGER},
+      </if>
+      <if test="confirm != null" >
+        confirm = #{confirm,jdbcType=VARCHAR},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bishe.pojo.SeatOrder" >
+    update seat_order
+    set name = #{name,jdbcType=VARCHAR},
+      ordertime = #{ordertime,jdbcType=TIMESTAMP},
+      arrivetime = #{arrivetime,jdbcType=TIMESTAMP},
+      leavetime = #{leavetime,jdbcType=TIMESTAMP},
+      duration = #{duration,jdbcType=INTEGER},
+      num = #{num,jdbcType=INTEGER},
+      cash = #{cash,jdbcType=INTEGER},
+      confirm = #{confirm,jdbcType=VARCHAR},
+      uid = #{uid,jdbcType=INTEGER},
+      state = #{state,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

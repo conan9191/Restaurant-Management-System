@@ -1,0 +1,158 @@
+@CHARSET "UTF-8";
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+/*
+	#顶部通栏
+*/
+
+#header .navbar-header {
+	background-color: #000000;
+}
+
+#header .navbar-cls-top .navbar-brand {
+	color: #fff;
+	text-align: center;
+	height: 75px;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-weight: 900;
+	padding-top: 25px;
+	text-transform: uppercase;
+}
+
+#header .header-right {
+	color: #fff;
+	padding-top: 15px;
+	padding-right: 50px;
+	padding-bottom: 5px;
+	padding-left: 50px;
+	float: right;
+	font-size: 16px;
+}
+
+#header .navbar-cls-top {
+	background: #00CA79;
+}
+
+#header .navbar-default {
+	border: 0px solid black;
+}
+
+/**
+	侧边导航栏
+*/
+#nav-side .navbar-side {
+	border: none;
+	background-color: #202020;
+	height: 35.13333rem;
+}
+
+#nav-side .nav>li {
+	position: relative;
+	display: block;
+}
+
+#nav-side .sidebar-collapse .nav {
+	padding: 0;
+}
+
+#nav-side .sidebar-collapse, .sidebar-collapse .nav {
+	background: none;
+}
+
+#nav-side .sidebar-collapse>.nav>li>a {
+	padding: 15px 10px;
+}
+
+#nav-side .sidebar-collapse .nav>li>a {
+	color: #fff;
+	background: #202020;
+	text-shadow: none;
+	padding: 10px 40px;
+	border-bottom: 1px solid #2F2E31;
+}
+
+#nav-side .sidebar-collapse .dropdown>li {
+	list-style: none;
+}
+
+#nav-side .sidebar-collapse .dropdown>li>a {
+	color: #fff;
+	font-size: 10px;
+	padding-left: 10px;
+	text-decoration: none;
+	line-height: 30px;
+}
+
+#nav-side .sidebar-collapse .dropdown>li>a:hover {
+	color: #ff8080;
+	border-bottom: 1px solid##00CA79;
+}
+
+#nav-side .user-img-div {
+	min-height: 140px;
+	padding: 20px;
+	background-color: #4380B8;
+}
+
+#nav-side .user-img-div .container {
+	height: 100px;
+	width: 100%;
+}
+
+#nav-side .user-img-div .container img {
+    width:90px;
+    height: 90px;
+}
+
+#user-info-header {
+    padding-top:25px;
+    font-size:0.7rem;
+    color:#fff;
+}
+
+#nav-side .user-img-div .container #user-info-body a {
+    color:#fff;
+    font-size:0.7rem;
+    padding-top:25px;
+}
+
+/*
+	show-item
+*/
+.items .item {
+	padding: 0;
+	height: 300px;
+	margin: 20px 20px;
+	border: 1px solid black;
+}
+
+.items .item .item-pic {
+	width: 100%;
+	border: 1px solid blue;
+}
+
+.items .item .item-pic img {
+	height: 150px;
+	width: 100%;
+}
+
+.items .item .item-price {
+	height: 50px;
+	border-bottom: 1px solid green;
+}
+
+.items .item .item-price .price {
+	margin-left: 10px;
+	font-size: 24px;
+	color: #f25d8e;
+}
+
+.items .item .item-price .price-symbol {
+	font-size: 20px;
+	color: #f25d8e;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bishe.mapper.ItemFormMapper" >
+  <resultMap id="BaseResultMap" type="com.bishe.pojo.ItemForm" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="discount" property="discount" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="vipprice" property="vipprice" jdbcType="REAL" />
+    <result column="cost" property="cost" jdbcType="REAL" />
+    <result column="sale" property="sale" jdbcType="INTEGER" />
+    <result column="filename" property="filename" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="typename" property="typeName" jdbcType="VARCHAR" />
+  </resultMap>
+  <!--  -->
+  <select id="selectItemForm" resultMap="BaseResultMap">
+  	SELECT item.*,item_type.name typename 
+  	FROM item,item_type,item_item_type
+  	WHERE  
+  	item.Id = item_item_type.itemId 
+  	AND item_type.id = item_item_type.typeId 
+  </select>
+</mapper>

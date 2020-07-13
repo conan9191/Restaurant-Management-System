@@ -1,0 +1,18 @@
+html,body{
+	font-size:18px;
+}
+
+#header{
+	height: 60px;
+	background-color: lightgreen;
+}
+
+#header > a {
+	color:white;
+	font-size:1.9rem;
+	text-decoration: none;
+}
+
+#header > a:hover{
+	color:#e92322;
+}

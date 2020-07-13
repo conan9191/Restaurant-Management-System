@@ -1,0 +1,257 @@
+html, body {
+	font-size: 18px;
+}
+
+.topbar {
+	background-color:#01a9da;
+	height: 50px;
+}
+
+.topbar > a > i{
+	color:#ebebeb;
+	font-size:1.5rem;
+}
+
+/*
+	tab1 订餐页面
+*/
+#tab1>.navi-left {
+	position: fixed;
+	border-right: 1px solid #c3c3c3;
+}
+
+#tab1>.navi-left>.nav>li {
+	border-top: 1px solid #c3c3c3;
+}
+
+#tab1>.navi-left>.nav>li>a {
+	font-size: 0.8rem;
+	color: #777;
+	line-height: 2rem;
+}
+
+#tab1>.navi-left>.nav>li>a:hover {
+	color: #e92322;
+}
+
+#tab1 #cart .modal-content .weui-cells {
+	display: block;
+}
+
+#tab1>.item-wrapper {
+	margin-bottom: 60px;
+}
+
+.toolbar .title {
+	bottom: -10px;
+}
+
+@media ( min-width : 992px) {
+	#tab1 .navi-left {
+		width: 10rem;
+		height: 100%;
+		position: fixed;
+	}
+	#tab1 .item-wrapper {
+		margin-left: 10rem;
+	}
+	#tab1 #btn-cart {
+		position: fixed;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: red;
+		color: #fff;
+		right: 40px;
+		bottom: 100px;
+	}
+	#tab1 #btn-cart>i {
+		top: 23px;
+		left: 22px;
+		font-size: 2rem;
+	}
+	#tab1 .item-wrapper .weui-flex__item {
+		padding: 10px 0;
+		border-bottom: 1px dashed #c3c3c3;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-name {
+		color: #777;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-name>span {
+		color: #000040;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-price {
+		color: #777;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-price>span {
+		font-size: 1rem;
+		color: #ff8080;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-sale {
+		color: #777;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-operation>a {
+		color: #ff8080;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-operation>a:hover {
+		color: #e92322;
+	}
+	#tab1>.item-wrapper>#template>.weui-flex>.weui-flex__item>.item-pic>img
+		{
+		width: 150px;
+		height: 150px;
+	}
+	
+	#tab3 > #header > .container-fluid > .row > div {
+		line-height: 100px;
+	}
+	
+	#tab3 > #header > .container-fluid > .row > div > img {
+		height: 100px;
+		width: 100px;
+	}
+	
+	#tab3 > #header {
+		padding:30px 0;
+		background-color: #92d892;
+	}
+	
+	#tab3>.all-order {
+		margin-top:30px;
+	}
+}
+
+}
+#tab1 .summary {
+	padding: 10px;
+	text-align: right;
+	background-color: white;
+}
+
+#tab1 .price {
+	font-size: .9em;
+	margin-right: 6px;
+}
+
+#tab1 #cart {
+	bottom: 60px;
+}
+
+@media ( max-width : 992px) {
+	#tab1 .navi-left {
+		width: 6rem;
+		height: 100%;
+		position: fixed;
+	}
+	#tab1 .item-wrapper {
+		margin-left: 6rem;
+	}
+	#tab1 #btn-cart {
+		position: fixed;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: red;
+		color: #fff;
+		right: 6px;
+		bottom: 89px;
+	}
+	#tab1 #btn-cart>i {
+		top: 10px;
+		left: 11px;
+		font-size: 1rem;
+	}
+	#tab1 .item-wrapper .weui-flex__item {
+		padding:10px 0;
+		border-bottom: 1px dashed #c3c3c3;
+	}
+	#tab1>.item-wrapper>#template>.weui-flex>.weui-flex__item>.item-pic>img
+		{
+		width: 150px;
+		height: 140px;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-name {
+		color: #777;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-name>span {
+		font-size: 1rem;
+		color: #000040;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-price {
+		color: #777;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-price>span {
+		font-size: 1rem;
+		color: #ff8080;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-sale {
+		color: #777;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-operation>a {
+		color: #ff8080;
+	}
+	#tab1 .item-wrapper .weui-flex__item .item-operation>a:hover {
+		color: #e92322;
+	}
+	
+	#tab3 > #header > .container-fluid > .row > div {
+		line-height: 100px;
+	}
+	
+	#tab3 > #header > .container-fluid > .row > div > img {
+		height: 100px;
+		width: 100px;
+	}
+	
+	#tab3 > #header {
+		padding:30px 0;
+		background-color: #92d892;
+	}
+	
+	#tab3>.all-order {
+		margin-top:30px;
+	}
+}
+	
+#tab3>.all-order>a {
+	display: block;
+	color: #ffffff;
+	text-decoration: none;
+	line-height: 35px;
+	font-size: 0.7rem;
+	background-color: #01726c;
+}
+/*
+			boorstrap 拓展
+	    */
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../fonts/glyphicons-halflings-regular.eot');
+	src: url('../fonts/glyphicons-halflings-regular.eot?#iefix')
+		format('embedded-opentype'),
+		url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+		url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+		url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+		url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular')
+		format('svg');
+}
+
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-shopping-cart:before {
+	content: "\e116";
+}
+
+.weui-count__btn{
+	cursor:pointer;
+}

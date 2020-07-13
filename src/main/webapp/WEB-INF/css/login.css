@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+body, html {
+	font-size: 18px;
+	font-family: sans-serif;
+}
+
+#header {
+	height: 50px;
+	background-color: #464646;
+}
+
+#header>.container>.row>#login-logo {
+	color: #fffafa;
+	line-height: 50px;
+	font-size: 0.8rem;
+}
+
+#bg {
+	position: relative;
+	height: 300px;
+	margin-top: 165px;
+	background-color: #ccccff;
+	z-index: 4;
+}
+
+#bg>.container {
+	height: 400px;
+}
+
+#bg>.container>.row>#manage-login {
+	height: 400px;
+	background-color: #faffff;
+	top: -50px;
+	z-index: 5;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius:  50px;
+	border: 1px solid #ffffcd;
+}
+
+#bg>.container>.row>#manage-login h3 {
+	padding-left : 36px;
+}
+
+#bg>.container>.row>#manage-login .input-group {
+	width: 80%;
+	padding: 5px 0;
+	margin-left: 37px;
+}

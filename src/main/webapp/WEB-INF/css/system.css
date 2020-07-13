@@ -1,0 +1,15 @@
+@charset "UTF-8";
+#select-menu{float: left;position: absolute;width: 450px;height: 500px;left:600px; top:150px;z-index:2000;outline: none; }
+#select-menu{margin: 5px 5px 0 0;font-size: 16px;}
+#select-menu p{line-height:26px; font-size:14px; color:#999}
+#select-menu a{line-height:26px; font-size:13px; }
+#select-menu h{line-height:26px; font-size:13px; }
+#select-menu p span{color:#666}
+#select-menu .modal-body{height: 230px;width: 200px;}
+#select-menu .modal-content{width: 300px;height: 350px;}
+#select-menu .pre-scrollable{width: 300px;;}
+#select-menu .modal-head{margin-left:20px;margin-top:20px;}
+#select-menu .dTreeNode{font-size:15px;}
+
+
+
